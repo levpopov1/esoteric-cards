@@ -148,14 +148,14 @@
 
 .navbar .navbar-brand{
     /* max-width: 300px; */
-    min-width: 200px;
+    /* min-width: 200px;
     background-color:#ec2F4B; 
-    color: #000000;
+    color: #000000; */
 }
 
-.navbar .navbar-brand:hover{
+/* .navbar .navbar-brand:hover{
     color: #ffffff;
-}
+} */
 
 .navbar-nav .nav-item .nav-link{
     padding: 20px;
@@ -194,7 +194,7 @@
 
 .navbar-brand{
     padding: 17px;
-    text-align: center;
+    /* text-align: center; */
 }
 
 .sidebar{

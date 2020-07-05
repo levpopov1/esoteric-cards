@@ -1,7 +1,7 @@
 <template>
 <div>
   <nav class="navbar navbar-expand-lg navbar-light bg-white p-0 ">
-    <a class="navbar-brand mr-0 col-md-2 text-white text-center" href="/">ESOTERIC CARDS</a>
+    <router-link to="/" class="navbar-brand">ESOTERIC CARDS</router-link>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMain" aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
