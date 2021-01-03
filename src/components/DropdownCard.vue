@@ -1,0 +1,33 @@
+<template>
+  <div class="col-sm-2 my-3">
+    <div class="card">
+      <div class="card-body">
+        <p class="card-text">
+          This is some text within a card body.
+        </p>
+      </div>
+      <div class="card-footer text-center">
+        <router-link v-bind:to="'/playing-cards/' + item.url" class="card-link stretched-link">
+          {{ item.title }}
+        </router-link>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+  export default {
+    name: 'DropdownCard',
+    components: {
+
+    },
+    methods: {
+
+    },
+    props: ['item']
+  }
+</script>
+
+<style>
+
+</style>
