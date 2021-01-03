@@ -106,47 +106,56 @@ const state = {
                 {
                     id: 1,
                     name: "Monarch", 
-                    img: "whatever.png"
+                    img: "whatever.png",
+                    slug: "monarch",
                 },
                 {
                     id: 2,
                     name: "Union", 
-                    img: "whatever.png"
+                    img: "whatever.png",
+                    slug: "union",
                 },
                 {
                     id: 3,
                     name: "Citizen", 
-                    img: "whatever.png"
+                    img: "whatever.png",
+                    slug: "citizen",
                 },
                 {
                     id: 4,
                     name: "Hudson", 
-                    img: "whatever.png"
+                    img: "whatever.png",
+                    slug: "hudson",
                 },
                 {
                     id: 5,
                     name: "High Victorian", 
-                    img: "whatever.png"
+                    img: "whatever.png",
+                    slug: "high-victorian",
                 },
                 {
                     id: 6,
                     name: "Contraband", 
-                    img: "whatever.png"
+                    img: "whatever.png",
+                    slug: "contaband",
                 },
                 {
                     id: 7,
                     name: "Medallion", 
-                    img: "whatever.png"
+                    img: "whatever.png",
+                    slug: "medallion",
                 },
                 {
                     id: 8,
                     name: "Tycoon", 
-                    img: "whatever.png"
+                    img: "whatever.png",
+                    slug: "tycoon",
                 },
                 {
                     id: 9,
                     name: "Artisan", 
-                    img: "whatever.png"
+                    img: "whatever.png",
+                    slug: "atrisan",
                 },
             ]
         },
@@ -157,42 +166,50 @@ const state = {
                 {
                     id: 1,
                     name: "Aviator", 
-                    img: "whatever.png"
+                    img: "whatever.png",
+                    slug: "aviator"
                 },
                 {
                     id: 2,
                     name: "Papercuts", 
-                    img: "whatever.png"
+                    img: "whatever.png",
+                    slug: "papercuts"
                 },
                 {
                     id: 3,
                     name: "NOC", 
-                    img: "whatever.png"
+                    img: "whatever.png",
+                    slug: "noc"
                 },
                 {
                     id: 4,
                     name: "Voyager", 
-                    img: "whatever.png"
+                    img: "whatever.png",
+                    slug: "voyager"
                 },
                 {
                     id: 5,
                     name: "Ace Fultons", 
-                    img: "whatever.png"
+                    img: "whatever.png",
+                    slug: "ace-fulton"
                 },
                 {
                     id: 6,
                     name: "Provision", 
-                    img: "whatever.png"
+                    img: "whatever.png",
+                    slug: "provision"
                 },
                 {
                     id: 7,
                     name: "Black Wheels", 
-                    img: "whatever.png"
+                    img: "whatever.png",
+                    slug: "black-wheels"
                 },
                 {
                     id: 8,
                     name: "Harmony", 
-                    img: "whatever.png"
+                    img: "whatever.png",
+                    slug: "harmony"
                 },
              ]
         }
