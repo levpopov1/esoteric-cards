@@ -14,66 +14,7 @@
           <div id="playingCardsDropdown" class="w-100 dropdown-menu m-0" aria-labelledby="playingCards">
             <div class="container-fluid">
               <div class="row">
-                <div class="col-sm-2 my-3">
-                  <div class="card">
-                    <div class="card-body">
-                      This is some text within a card body.
-                    </div>
-                  </div>
-                  <router-link to="/playing-cards/:name" class="dropdown-item  text-center">
-                    Theory11
-                  </router-link>
-                </div>
-                <div class="col-sm-2 my-3">
-                  <div class="card">
-                    <div class="card-body">
-                      This is some text within a card body.
-                    </div>
-                  </div>
-                  <router-link to="/playing-cards/:name" class="dropdown-item  text-center">
-                    USPCC
-                  </router-link>
-                </div>
-                <div class="col-sm-2 my-3">
-                  <div class="card">
-                    <div class="card-body">
-                      This is some text within a card body.
-                    </div>
-                  </div>
-                  <router-link to="/playing-cards/:name" class="dropdown-item  text-center">
-                    Ellusionist
-                  </router-link>
-                </div>
-                <div class="col-sm-2 my-3">
-                  <div class="card">
-                    <div class="card-body">
-                      This is some text within a card body.
-                    </div>
-                  </div>
-                  <router-link to="/playing-cards/:name" class="dropdown-item  text-center">
-                    Art of Play
-                  </router-link>
-                </div>
-                <div class="col-sm-2 my-3">
-                  <div class="card">
-                    <div class="card-body">
-                      This is some text within a card body.
-                    </div>
-                  </div>
-                  <router-link to="/playing-cards/:name" class="dropdown-item  text-center">
-                    Bisicle
-                  </router-link>
-                </div>
-                <div class="col-sm-2 my-3">
-                  <div class="card">
-                    <div class="card-body">
-                      This is some text within a card body.
-                    </div>
-                  </div>
-                  <router-link to="/playing-cards/:name" class="dropdown-item  text-center">
-                    Expert
-                  </router-link>
-                </div>
+                <DropdownCard v-for="item in playingCardsCategories" v-bind:key="item.id" v-bind:item="item"/>
               </div>
             </div>
           </div>
@@ -85,66 +26,7 @@
           <div id="cardGamesDropdown" class="w-100 dropdown-menu m-0" aria-labelledby="cardGames">
             <div class="container-fluid">
               <div class="row">
-                <div class="col-sm-2 my-3">
-                  <div class="card">
-                    <div class="card-body">
-                      This is some text within a card body.
-                    </div>
-                  </div>
-                  <router-link to="/card-games/:name" class="dropdown-item  text-center">
-                    Hearhtstone
-                  </router-link>
-                </div>
-                <div class="col-sm-2 my-3">
-                  <div class="card">
-                    <div class="card-body">
-                      This is some text within a card body.
-                    </div>
-                  </div>
-                  <router-link to="/card-games/:name" class="dropdown-item  text-center">
-                    Magic The Gathering
-                  </router-link>
-                </div>
-                <div class="col-sm-2 my-3">
-                  <div class="card">
-                    <div class="card-body">
-                      This is some text within a card body.
-                    </div>
-                  </div>
-                  <router-link to="/card-games/:name" class="dropdown-item  text-center">
-                    Legends of Runeterra
-                  </router-link>
-                </div>
-                <div class="col-sm-2 my-3">
-                  <div class="card">
-                    <div class="card-body">
-                      This is some text within a card body.
-                    </div>
-                  </div>
-                  <router-link to="/card-games/:name" class="dropdown-item  text-center">
-                    Gwent
-                  </router-link>
-                </div>
-                <div class="col-sm-2 my-3">
-                  <div class="card">
-                    <div class="card-body">
-                      This is some text within a card body.
-                    </div>
-                  </div>
-                  <router-link to="/card-games/:name" class="dropdown-item  text-center">
-                    Artifact
-                  </router-link>
-                </div>
-                <div class="col-sm-2 my-3">
-                  <div class="card">
-                    <div class="card-body">
-                      This is some text within a card body.
-                    </div>
-                  </div>
-                  <router-link to="/card-games/:name" class="dropdown-item  text-center">
-                    Yu-Gi-Oh
-                  </router-link>
-                </div>
+                <DropdownCard v-for="item in cardGamesCategories" v-bind:key="item.id" v-bind:item="item"/>
               </div>
             </div>
           </div>
@@ -180,84 +62,7 @@
             <i class="fas fa-cog"></i>
           </a>
         </li>
-        <li class="nav-item dropdown" id="user-icon">
-          <a class="nav-link dropdown-toggle" id="userSettings" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <i class="fas fa-user-circle" id="usericon"></i>
-            <span class="label">user name</span>
-          </a>
-          <div id="userSettingsDropdown" class="dropdown-menu dropdown-menu-right" aria-labelledby="userSettings">
-            <a class="dropdown-item d-flex align-items-center" href="/users/id">
-              <i class="fa_left fas fa-user"></i>
-              <span class="label">View Profile</span>
-            </a>
-            <div class="dropdown-divider"></div>
-            <h6 class="dropdown-header">Admin panel</h6>
-            <router-link to="/users" class="dropdown-item d-flex align-items-center">
-              <i class="fa_left fas fa-users"></i>
-              <span class="label">User list</span>
-            </router-link>
-            <a class="dropdown-item d-flex align-items-center" href="/admin/accesslog">
-              <i class="fa_left fas fa-lock-open"></i>
-              <span class="label">Access log</span>
-            </a>
-            <a class="dropdown-item d-flex align-items-center" href="/admin/devblog">
-              <i class="fa_left fas fa-book"></i>
-              <span class="label">Dev Blog</span>
-            </a>
-            <a class="dropdown-item d-flex align-items-center" href="#" target="_blank">
-              <i class="fa_left fab fa-gitlab"></i>
-              <span class="label">Release Schedule</span>
-              <i class="fa_right fas fa-external-link-alt ml-auto"></i>
-            </a>
-            <div class="dropdown-divider"></div>
-            <h6 class="dropdown-header">Settings</h6>
-            <a class="dropdown-item d-flex align-items-center" href="/users/id/passwordchange">
-              <i class="fa_left fas fa-lock"></i>
-              <span class="label">Change password</span>
-            </a>
-            <div class="dropdown-divider"></div>  
-            <h6 class="dropdown-header">Preferences</h6>
-            <form>
-              <div class="dropdown-item-static d-flex align-items-center">
-                <i class="fa_left fas fa-moon"></i>
-                <span class="label">Dark Mode</span>
-                <label class="switch ml-auto">
-                    <input type="checkbox">
-                    <span class="slider round"></span>
-                </label>
-              </div>
-              <div class="dropdown-item-static d-flex align-items-center">
-                <i class="fa_left fas fa-anchor"></i>
-                <span class="label">Some other toggle</span>
-                <label class="switch ml-auto">
-                    <input type="checkbox">
-                    <span class="slider round"></span>
-                </label>
-              </div>
-              <div class="dropdown-item-static d-flex align-items-center">
-                <i class="fa_left fas fa-anchor"></i>
-                <span class="label">some other toggle</span>
-                <label class="switch ml-auto">
-                    <input type="checkbox">
-                    <span class="slider round"></span>
-                </label>
-              </div>
-              <div class="dropdown-item-static d-flex align-items-center">
-                <i class="fa_left fas fa-anchor"></i>
-                <span class="label">some other toggle</span>
-                <label class="switch ml-auto">
-                    <input type="checkbox">
-                    <span class="slider round"></span>
-                </label>
-              </div>
-            </form>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item d-flex align-items-center" href="/auth/logout">
-              <i class="fa_left fas fa-door-open"></i>
-              <span class="label">Log out</span>
-            </a>
-          </div>
-        </li>
+        <UserMenuDropdown/>
       </ul>
     </div>
   </nav>
@@ -265,11 +70,15 @@
 </template>
 
 <script>
-
+import { mapGetters } from "vuex";
+import DropdownCard from "./DropdownCard";
+import UserMenuDropdown from "./UserMenuDropdown";
 export default {
   name: 'TopBar',
+  computed: mapGetters(["playingCardsCategories", "cardGamesCategories"]),
   components: {
-
+    DropdownCard,
+    UserMenuDropdown
   },
   methods: {
 
