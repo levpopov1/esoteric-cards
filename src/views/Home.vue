@@ -1,6 +1,6 @@
 <template>
   <div id="home">
-      <Deck/>
+      <h1>Homepage</h1>
   </div>
 </template>
 
@@ -9,13 +9,13 @@
 // import HelloWorld from '@/components/HelloWorld.vue'
 // import Deck from '@/components/Deck'
 // import Sidebar from '@/components/Sidebar'
-import Deck from '@/components/Deck'
+// import Deck from '@/components/Deck'
 
 
 export default {
   name: 'Home',
   components: {
-    Deck,
+    // Deck,
     // Sidebar,
   }
 }
