@@ -4,7 +4,7 @@
       <div class="card">
         <img :src="deck.img" class="card-img-top" alt="">
         <div class="card-body">
-          <h5 class="card-title">{{ deck.name }}</h5>
+          <router-link :to="category + '/' + deck.slug">{{ deck.name }}</router-link>
         </div>
       </div>
     </div>
@@ -15,6 +15,7 @@
 import { mapGetters } from "vuex";
   export default {
     name: "Decks",
+    props: ["category"],
     computed: {
       ...mapGetters(["decklist"]),
       decks: function(){
