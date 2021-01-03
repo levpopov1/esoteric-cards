@@ -1,7 +1,7 @@
 <template>
   <div id="home">
       <h1>Decklist</h1>
-      <Decks/>
+      <Decks v-bind:category="this.$route.params.category"/>
   </div>
 </template>
 
