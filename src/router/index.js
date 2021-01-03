@@ -4,6 +4,7 @@ import Home from '../views/Home.vue'
 import About from '../views/About.vue'
 import Users from '../views/Users.vue'
 import Decklist from '../views/Decklist.vue'
+import DeckView from '../views/DeckView.vue'
 
 Vue.use(VueRouter)
 
@@ -27,6 +28,11 @@ Vue.use(VueRouter)
     path: '/playing-cards/:category',
     name: 'Decklist',
     component: Decklist
+  },
+  {
+    path: '/playing-cards/:category/:deck',
+    name: 'DeckView',
+    component: DeckView
   }
 ]
 
