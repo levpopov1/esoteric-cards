@@ -97,13 +97,114 @@ const state = {
             title: "Gwent",
             url: "gwent"
         }
+    ], 
+    decklist: [
+        {
+            id: 1,
+            category: "theory11",
+            decks: [
+                {
+                    id: 1,
+                    name: "Monarch", 
+                    img: "whatever.png"
+                },
+                {
+                    id: 2,
+                    name: "Union", 
+                    img: "whatever.png"
+                },
+                {
+                    id: 3,
+                    name: "Citizen", 
+                    img: "whatever.png"
+                },
+                {
+                    id: 4,
+                    name: "Hudson", 
+                    img: "whatever.png"
+                },
+                {
+                    id: 5,
+                    name: "High Victorian", 
+                    img: "whatever.png"
+                },
+                {
+                    id: 6,
+                    name: "Contraband", 
+                    img: "whatever.png"
+                },
+                {
+                    id: 7,
+                    name: "Medallion", 
+                    img: "whatever.png"
+                },
+                {
+                    id: 8,
+                    name: "Tycoon", 
+                    img: "whatever.png"
+                },
+                {
+                    id: 9,
+                    name: "Artisan", 
+                    img: "whatever.png"
+                },
+            ]
+        },
+        {
+            id: 2,
+            category: "art-of-play",
+            decks: [
+                {
+                    id: 1,
+                    name: "Aviator", 
+                    img: "whatever.png"
+                },
+                {
+                    id: 2,
+                    name: "Papercuts", 
+                    img: "whatever.png"
+                },
+                {
+                    id: 3,
+                    name: "NOC", 
+                    img: "whatever.png"
+                },
+                {
+                    id: 4,
+                    name: "Voyager", 
+                    img: "whatever.png"
+                },
+                {
+                    id: 5,
+                    name: "Ace Fultons", 
+                    img: "whatever.png"
+                },
+                {
+                    id: 6,
+                    name: "Provision", 
+                    img: "whatever.png"
+                },
+                {
+                    id: 7,
+                    name: "Black Wheels", 
+                    img: "whatever.png"
+                },
+                {
+                    id: 8,
+                    name: "Harmony", 
+                    img: "whatever.png"
+                },
+             ]
+        }
+
     ]
 };
 
 const getters = {
     allCards: (state) => state.cards,
     playingCardsCategories: (state) => state.playingCardsCategories,
-    cardGamesCategories: (state) => state.cardGamesCategories
+    cardGamesCategories: (state) => state.cardGamesCategories,
+    decklist: (state) => state.decklist,
 };
 
 const actions = {};
