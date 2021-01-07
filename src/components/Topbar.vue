@@ -14,7 +14,7 @@
           <div id="playingCardsDropdown" class="w-100 dropdown-menu m-0" aria-labelledby="playingCards">
             <div class="container-fluid">
               <div class="row">
-                <DropdownCard v-for="item in playingCardsCategories" v-bind:key="item.id" v-bind:item="item"/>
+                <DropdownCard v-for="item in playingCardsVendors" v-bind:key="item.id" v-bind:item="item"/>
               </div>
             </div>
           </div>
@@ -70,18 +70,28 @@
 </template>
 
 <script>
-import { mapGetters } from "vuex";
+import { mapGetters, mapActions } from "vuex";
 import DropdownCard from "./DropdownCard";
 import UserMenuDropdown from "./UserMenuDropdown";
 export default {
   name: 'TopBar',
-  computed: mapGetters(["playingCardsCategories", "cardGamesCategories"]),
+  computed: mapGetters(["allPlayingCards", "playingCardsCategories", "cardGamesCategories", "playingCardsVendors"]),
   components: {
     DropdownCard,
     UserMenuDropdown
   },
   methods: {
+    ...mapActions(['fetchPlayingCardsVendors']),
+    setPlayingCardsCategories: function(){
+      console.log(this.allPlayingCards)
 
+      return this.allPlayingCards.map(function(item){
+        return item.vendor;
+      });
+    }
+  },
+  created(){
+    this.fetchPlayingCardsVendors();
   }
 }
 </script>
