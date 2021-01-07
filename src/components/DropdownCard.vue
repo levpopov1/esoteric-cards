@@ -7,8 +7,8 @@
         </p>
       </div>
       <div class="card-footer text-center">
-        <router-link v-bind:to="'/playing-cards/' + item.url" class="card-link stretched-link">
-          {{ item.title }}
+        <router-link v-bind:to="'/playing-cards/' + item.slug" class="card-link stretched-link">
+          {{ item.name }}
         </router-link>
       </div>
     </div>
