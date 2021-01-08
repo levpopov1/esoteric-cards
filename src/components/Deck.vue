@@ -1,25 +1,38 @@
 <template>
-  <div id="deck">
-    <h1 class="title">Deck of Cards</h1>
-    <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-6">
-      <div class="col mb-4" v-for="card in allCards" v-bind:key="card.id">
-        <div  class="card h-100">
-          <div class="card-body">
-            <h5 class="card-title">{{ card.title }}</h5>
-          </div>
-        </div>
+  <div class="col-sm-3 my-3">
+    <div class="card">
+      <img :src="deck.img" class="card-img-top" alt="">
+      <div class="card-body">
+        <router-link :to="'/' + category.slug + '/' + vendor.slug + '/' + deck.slug">{{ deck.name }}</router-link>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import { mapGetters } from "vuex";
-export default {
-  name: "Deck",
-  computed: mapGetters(["allCards"])
-};
+import { mapGetters, mapActions } from "vuex";
+  export default {
+    name: "Deck",
+    props: ["vendor", "category", "deck"],
+    computed: {
+      // ...mapGetters(["getDecks"]),
+      // decks(){
+      //   let selection = this.getDecks.filter(item => item.vendor == this.vendor.name);
+      //   return selection.length > 0 ? selection : {};
+      // }
+    },
+    components: {
+      
+    },
+    // methods:{
+    // ...mapActions(["fetchDecks"])
+    // },
+    // created(){
+    //   this.fetchDecks();
+    // }
+  }
 </script>
 
 <style>
+
 </style>
