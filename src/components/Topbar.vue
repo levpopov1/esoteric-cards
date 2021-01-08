@@ -12,9 +12,9 @@
             Playing Cards
           </a>
           <div id="playingCardsDropdown" class="w-100 dropdown-menu m-0" aria-labelledby="playingCards">
-            <div class="container-fluid">
+            <div class="container-fluid d-block">
               <div class="row">
-                <DropdownCard v-for="item in playingCardsVendors" v-bind:key="item.id" v-bind:item="item"/>
+                <DropdownCard v-for="item in getPlayingCardsVendors" v-bind:key="item.id" v-bind:item="item" category="playing-cards"/>
               </div>
             </div>
           </div>
@@ -24,9 +24,9 @@
             Card Games
           </a>
           <div id="cardGamesDropdown" class="w-100 dropdown-menu m-0" aria-labelledby="cardGames">
-            <div class="container-fluid">
+            <div class="container-fluid d-block">
               <div class="row">
-                <DropdownCard v-for="item in cardGamesCategories" v-bind:key="item.id" v-bind:item="item"/>
+                <DropdownCard v-for="item in getCardGamesVendors" v-bind:key="item.id" v-bind:item="item" category="card-games"/>
               </div>
             </div>
           </div>
@@ -75,23 +75,10 @@ import DropdownCard from "./DropdownCard";
 import UserMenuDropdown from "./UserMenuDropdown";
 export default {
   name: 'TopBar',
-  computed: mapGetters(["allPlayingCards", "playingCardsCategories", "cardGamesCategories", "playingCardsVendors"]),
+  computed: mapGetters(["getPlayingCardsVendors", "getCardGamesVendors"]),
   components: {
     DropdownCard,
     UserMenuDropdown
   },
-  methods: {
-    ...mapActions(['fetchPlayingCardsVendors']),
-    setPlayingCardsCategories: function(){
-      console.log(this.allPlayingCards)
-
-      return this.allPlayingCards.map(function(item){
-        return item.vendor;
-      });
-    }
-  },
-  created(){
-    this.fetchPlayingCardsVendors();
-  }
 }
 </script>
