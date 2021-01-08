@@ -9,16 +9,23 @@
 </template>
 
 <script>
-
+import { mapGetters, mapActions } from "vuex";
 // import Navbar from '@/components/Navbar'
 import TopBar from '@/components/Topbar'
-
 
 export default {
   name: "App",
   components: {
     // Navbar,
     TopBar
+  },
+  methods:{
+    ...mapActions(["fetchDecks", "fetchVendors", "fetchCategories"])
+  },
+  created(){
+    this.fetchCategories();
+    this.fetchVendors();
+    this.fetchDecks();
   }
 }
 </script>
