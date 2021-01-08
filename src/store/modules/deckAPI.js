@@ -1,39 +1,66 @@
-// store methods for Deck component
+// Cards API Functions
+
+const API = 'http://localhost:5000/api/v1/';
+
 const state = {
-    playingCards: [],
-    playingCardsCategories: [],
-    playingCardsVendors: [],
-    cardGamesCategories: [],
-    decklist: []
+    categories: [],
+    vendors: [],
+    decks: [],
+    cards: [],
+    currentCategory:{
+        name: "",
+        slug: ""
+    },
+    currentVendor:{
+        name: "",
+        slug: ""
+    },
+    currentDeck:{
+        name: "",
+        slug: ""
+    }
 };
 
 const getters = {
-    allPlayingCards: (state) => state.playingCards,
-    playingCardsCategories: (state) => state.playingCardsCategories,
-    cardGamesCategories: (state) => state.cardGamesCategories,
-    decklist: (state) => state.decklist,
-    playingCardsVendors: (state) => state.playingCardsVendors
+    getCategories: (state) => state.categories,
+    getVendors: (state) => state.vendors,
+    getDecks: (state) => state.decks,
+    getCurrentCategory: (state) => state.currentCategory,
+    getCurrentVendor: (state) => state.currentVendor,
+    getCurrentDeck: (state) => state.currentDeck,
+    getPlayingCardsVendors: (state) => state.vendors.filter(item => item.category === "Playing Cards"),
+    getCardGamesVendors: (state) => state.vendors.filter(item => item.category === "Card Games"),
 };
 
 const actions = {
-    fetchPlayingCards({ commit }) {
-        const url = 'http://localhost:5000/api/v1/categories/';
-        fetch(url)
-            .then(response => response.json())
-            .then(json => commit('setPlayingCards', json))
+    async fetchCategories({ commit }){
+        const url = API + 'categories';
+        let response = await fetch(url);
+        let data = await response.json();
+        commit('setCategories', data);
     },
-    fetchPlayingCardsVendors({ commit }) {
-        const url = 'http://localhost:5000/api/v1/categories/playing-cards/vendors';
-        fetch(url)
-            .then(response => response.json())
-            .then(json => commit('setPlayingCardsVendors', json))
+    async fetchVendors({ commit }){
+        const url = API + 'vendors';
+        let response = await fetch(url);
+        let data = await response.json();
+        commit('setVendors', data);
+    },
+    async fetchDecks({ commit }){
+        const url = API + 'decks';
+        let response = await fetch(url);
+        let data = await response.json();
+        commit('setDecks', data);
     }
 };
 
 const mutations = {
-    setPlayingCards: (state, playingCards) => (state.playingCards = playingCards),
-    setPlayingCardsVendors: (state, playingCardsVendors) => (state.playingCardsVendors = playingCardsVendors),
-    setPlayingCardsCategories: (state, playingCardsCategories) => (state.cardGamesCategories = playingCardsCategories)
+    setCategories: (state, categories) => (state.categories = categories),
+    setVendors: (state, vendors) => (state.vendors = vendors),
+    setDecks: (state, decks) => (state.decks = decks),
+    setCurrentCategory: (state, currentCategory) => (state.currentCategory = currentCategory),
+    setCurrentVendor: (state, currentVendor) => (state.currentVendor = currentVendor),
+    setCurrentDeck: (state, currentDeck) => (state.currentDeck = currentDeck),
+    setCards: (state, cards) => (state.cards = cards),
 };
 
 
