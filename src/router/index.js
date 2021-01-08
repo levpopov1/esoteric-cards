@@ -25,12 +25,12 @@ Vue.use(VueRouter)
     component: Users
   },
   {
-    path: '/playing-cards/:category',
+    path: '/:category/:vendor',
     name: 'Decklist',
     component: Decklist
   },
   {
-    path: '/playing-cards/:category/:deck',
+    path: '/:category/:vendor/:deck',
     name: 'DeckView',
     component: DeckView
   }
